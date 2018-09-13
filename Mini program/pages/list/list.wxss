@@ -2,7 +2,7 @@
 @import "/pages/template/list-template.wxss";
 page{
   height: 100%;
-  background: rgb(240, 237, 240);
+  background: #eee
 }
 swiper{
   width: 100%;

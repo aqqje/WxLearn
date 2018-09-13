@@ -1,7 +1,9 @@
 /* pages/template/list-template.wxss */
-.listTem{
+.temContainer{
   display: flex;
   flex-direction: column;
+  border-bottom:1px solid #EE2C2C;
+  padding: 20rpx;
 }
 .avatar_data{
   padding: 10rpx;

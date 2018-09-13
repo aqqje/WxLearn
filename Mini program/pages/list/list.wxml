@@ -17,12 +17,10 @@
   </swiper>
   <!-- 帖子信息 -->
 
-  <block wx:for="{{[1, 2, 3]}}">
+  <block wx:for="{{dataArray}}" wx:key="index">
    <view>
-    <template is="listTem"/>
+    <template is="listTem" data="{{...item}}"/>
    </view>
   </block>
-   <view>
-    <template is="listTem"/>
-   </view>
+   
 </view>
