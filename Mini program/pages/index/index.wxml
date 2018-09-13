@@ -1,0 +1,12 @@
+<!--pages/index/index.wxml-->
+<view class="indexContainer">
+  <image class="avatar" src="{{userInfo.avatarUrl}}"></image>
+  <button bindgetuserinfo='handleGetUserInfo' style='display:{{isShow?"block": "none"}}' class="getUserInfoBnt" open-type="getUserInfo">获取用户信息</button>
+  <text class="userName">Hello {{userInfo.nickName}}!</text>
+  <!-- 
+    bind事件绑定不会阻止冒泡事件向上冒泡，catch事件绑定可以阻止冒泡事件向上冒泡。 
+    -->
+  <view catchtap='goList' class="goStudy">
+    <text bindtap='handleChild'>开启小程序之旅</text>
+  </view>
+</view>

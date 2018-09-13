@@ -1,0 +1,18 @@
+<!--pages/template/list-template.wxml-->
+<template name="listTem">
+  <view class="temContainer">
+    <view class="avatar_data">
+      <image src="/images/avatar/0.png"></image>
+      <text>may 19 2018</text>
+    </view>
+    <text class="company">Aqqje</text>
+    <image class="contentImg" src="/images/detail/carousel/01.jpg"></image>
+    <text class="content">Aqjje Aqjje Aqjje Aqjje Aqjje Aqjje Aqjje Aqjje Aqjje Aqjje Aqjje Aqjje Aqjje Aqjje Aqjje Aqjje Aqjje Aqjje Aqjje Aqjje </text>
+    <view class="collection_love">
+      <image src="/images/icon/star.png"></image>
+      <text>88</text>
+      <image src="/images/icon/view.png"></image>
+      <text>88</text>
+    </view>
+  </view>
+</template>

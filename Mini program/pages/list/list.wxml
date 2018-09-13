@@ -1,0 +1,25 @@
+<!--pages/list/list.wxml-->
+<!-- 导入模板 -->
+<import src="/pages/template/list-template.wxml" />
+
+<!-- 界面轮播图 -->
+<view>
+  <swiper indicator-color="#FFD700" indicator-dots="true" autoplay="true">
+    <swiper-item>
+      <image src="/images/detail/carousel/01.jpg"></image>
+    </swiper-item>
+    <swiper-item>
+      <image src="/images/detail/carousel/02.jpg"></image>
+    </swiper-item>
+    <swiper-item>
+      <image src="/images/detail/carousel/03.jpg"></image>
+    </swiper-item>
+  </swiper>
+  <!-- 帖子信息 -->
+   <view>
+    <template is="listTem"/>
+   </view>
+   <view>
+    <template is="listTem"/>
+   </view>
+</view>

@@ -1,0 +1,42 @@
+/* pages/template/list-template.wxss */
+.listTem{
+  display: flex;
+  flex-direction: column;
+}
+.avatar_data{
+  padding: 10rpx;
+}
+.avatar_data image{
+  width: 60rpx;
+  height: 60rpx;
+  vertical-align: middle;
+  margin-right: 10rpx;
+}
+.avatar_data text{
+  font-size: 28rpx;
+}
+.company{
+  margin-left: 10rpx;
+  font-size: 32rpx;
+  font-weight: 700rpx;
+}
+.contentImg{
+  width: 100%;
+  height: 460rpx;
+}
+.content{
+  text-indent: 28rpx;
+  font-size: 28rpx;
+  color: rgb(241, 124, 28);
+  padding: 20rpx;
+}
+.collection_love image{
+  width: 30rpx;
+  height: 30rpx;
+  margin-left: 10rpx;
+  vertical-align: middle;
+}
+.collection_love text{
+  font-size: 28rpx;
+  margin-left: 10rpx
+}
