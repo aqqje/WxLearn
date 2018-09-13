@@ -19,7 +19,4 @@
    <view>
     <template is="listTem"/>
    </view>
-   <view>
-    <template is="listTem"/>
-   </view>
 </view>
