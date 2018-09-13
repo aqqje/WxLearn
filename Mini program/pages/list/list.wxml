@@ -16,6 +16,12 @@
     </swiper-item>
   </swiper>
   <!-- 帖子信息 -->
+
+  <block wx:for="{{[1, 2, 3]}}">
+   <view>
+    <template is="listTem"/>
+   </view>
+  </block>
    <view>
     <template is="listTem"/>
    </view>
