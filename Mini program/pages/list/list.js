@@ -1,6 +1,6 @@
 // pages/list/list.js
 let datas=require("../../datas/list-data.js")
-console.log(datas , typeof datas)
+// console.log(datas , typeof datas)
 Page({
 
   /**
@@ -13,9 +13,11 @@ Page({
   /**
    * go --> detail
    */
-  goDetail(){
+  goDetail(event){
+    console.log(event);
+    let index = event.currentTarget.dataset.index
     wx.navigateTo({
-      url: '/pages/detail/detail',
+      url: '/pages/detail/detail?index=' + index
     })
   },
 

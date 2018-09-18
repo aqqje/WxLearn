@@ -17,8 +17,8 @@
   </swiper>
   <!-- 帖子信息 -->
 
-  <block wx:for="{{dataArray}}" wx:key="index">
-   <view catchtap='goDetail'>
+  <block wx:for="{{dataArray}}" wx:key="{{index}}">
+   <view catchtap='goDetail' data-index="{{index}}">
     <template is="listTem" data="{{...item}}"/>
    </view>
   </block>
