@@ -18,7 +18,7 @@
   <!-- 帖子信息 -->
 
   <block wx:for="{{dataArray}}" wx:key="index">
-   <view>
+   <view catchtap='goDetail'>
     <template is="listTem" data="{{...item}}"/>
    </view>
   </block>

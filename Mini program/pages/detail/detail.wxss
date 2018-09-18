@@ -1,0 +1,57 @@
+/* pages/detail/detail.wxss */
+.detailContainer{
+  display: flex;
+  flex-direction: column;
+}
+.headImg{
+  width: 100%;
+  height: 480rpx
+}
+.avatar_date{
+  padding: 10rpx;
+}
+.avatar_date image{
+  width: 64rpx;
+  height: 64rpx;
+  vertical-align: middle;
+}
+.avatar_date text{
+  font-size: 32rpx;
+  margin-left: 10rpx;
+}
+.company{
+  font-size: 38rpx;
+  font-weight: bold;
+  margin-left: 10rpx;
+}
+.conllection_share_container{
+  position: relative;
+}
+.collection_share{
+  float: right;
+  margin-right: 40rpx;
+}
+.collection_share image{
+  width: 96rpx;
+  height: 96rpx;
+  margin-right: 30rpx;
+}
+.line{
+  width: 90%;
+  height: 1rpx;
+  background-color: #eee;
+  z-index: -1;
+  top: 48rpx;
+  left: 5%;
+  position: absolute;
+}
+.button{
+  width: 220rpx;
+  height: 80rpx;
+}
+.content{
+  font-size: 32rpx;
+  text-indent: 32rpx;
+  padding: 20rpx;
+  color: rgb(241, 124, 28);
+}
