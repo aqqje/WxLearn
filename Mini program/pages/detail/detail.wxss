@@ -7,6 +7,7 @@
   width: 100%;
   height: 480rpx
 }
+
 .avatar_date{
   padding: 10rpx;
 }
@@ -54,4 +55,12 @@
   text-indent: 32rpx;
   padding: 20rpx;
   color: rgb(241, 124, 28);
+}
+.headMusic{
+  width: 60rpx;
+  height: 60rpx;
+  position: absolute;
+  top: 200rpx;
+  left: 50%;
+  margin-left: -30rpx;
 }

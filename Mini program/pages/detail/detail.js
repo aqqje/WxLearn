@@ -1,5 +1,8 @@
 // pages/detail/detail.js
 let datas = require('../../datas/list-data.js');
+
+let appDatas = getApp();
+console.log(appDatas.data.isPlay);
 Page({
 
   /**
@@ -8,7 +11,8 @@ Page({
   data: {
     dataObj: [],
     index: null,
-    isCollection: false
+    isCollection: false,
+    isMusicPlay: false
   },
 
   /**
@@ -26,13 +30,39 @@ Page({
     // 对缓存对象进行 init
     if (!isDetailCollected){
       wx.setStorageSync("isCollected", {})
-    }
+    };
     // 判断当前用户是收藏当前文章
     if (isDetailCollected[index]){
       this.setData({
         isCollection: isDetailCollected
       })
+    };
+
+    // 监听音乐播放与暂停
+    wx.onBackgroundAudioPlay(() => {
+      console.log("音乐播放！");
+      this.setData({
+        isMusicPlay: true
+      });
+      appDatas.data.isPlay = true;
+      appDatas.data.pagaIndex = index;
+
+    });
+
+    // 判断音乐是否在播放
+    if (appDatas.data.isPlay && appDatas.data.pagaIndex === index){
+      this.setData({
+        isMusicPlay: true
+      });
     }
+
+    wx.onBackgroundAudioPause(() => {
+      console.log("音乐暂停！")
+      this.setData({
+        isMusicPlay: false
+      });
+      appDatas.data.isPlay = false;
+    });
 
   },
   // 是否显示收藏
@@ -64,56 +94,34 @@ Page({
         });
       }
     })
-
-
-
-  },
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-    console.log(this)
   },
 
   /**
-   * 生命周期函数--监听页面显示
+   * 控制音乐播放
    */
-  onShow: function () {
-
+  handMusicPlay(){
+    // console.log(this)
+    let isMusicPlay = !this.data.isMusicPlay
+    this.setData({
+      isMusicPlay
+    }); 
+    if (isMusicPlay){
+      // 播放音乐
+      let { coverImgUrl, title, dataUrl} = this.data.dataObj.music
+      wx.playBackgroundAudio({
+        dataUrl,
+        coverImgUrl,
+        title
+      });
+    }else{
+      // 暂停音乐
+      wx.pauseBackgroundAudio({});
+    }
+    
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  handleShare(){
+    wx.showActionSheet({
+      itemList: ['分享到朋友圈', '分享到qq空间', '分享到微博']
+    });
   }
 })
